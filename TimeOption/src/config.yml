@@ -1,0 +1,11 @@
+mysql_db:
+  user: "root"
+  password: ""
+  port: 3306
+  ip: 127.0.0.1
+  database: "timeoption_"
+lang:
+  day: "&bDía"
+  night: "&5Noche"
+  change: "&aTiempo cambiado a:"
+  onlyPlayers: "&cEste comando solo puede ser usado por jugadores"

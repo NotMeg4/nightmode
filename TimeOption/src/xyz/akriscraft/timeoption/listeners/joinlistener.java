@@ -9,6 +9,5 @@ public class joinlistener implements Listener {
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent e) {
         e.getPlayer().setPlayerTime(1000, false);
-        e.getPlayer().sendMessage("pUTO");
     }
 }

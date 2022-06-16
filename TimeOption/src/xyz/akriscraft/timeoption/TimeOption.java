@@ -3,6 +3,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.akriscraft.timeoption.commands.changetime;
 import xyz.akriscraft.timeoption.listeners.joinlistener;
+import java.
 
 public class TimeOption extends JavaPlugin {
 
@@ -10,6 +11,7 @@ public class TimeOption extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        YamlDocument config = YamlDocument.create(new File(getDataFolder(), "config.yml"), getResource("config.yml"), GeneralSettings.builder().setSerializer(SpigotSerializer.getInstance()).build(), LoaderSettings.DEFAULT, DumperSettings.DEFAULT, UpdaterSettings.DEFAULT);
         getCommand("changetime").setExecutor(new changetime());
         Bukkit.getPluginManager().registerEvents(new joinlistener(), this);
 
