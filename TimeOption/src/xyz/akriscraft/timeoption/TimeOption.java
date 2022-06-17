@@ -1,30 +1,42 @@
 package xyz.akriscraft.timeoption;
-import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.akriscraft.timeoption.commands.changetime;
+import xyz.akriscraft.timeoption.commands.toggleCMD;
 import xyz.akriscraft.timeoption.utils.dbConnect;
 import xyz.akriscraft.timeoption.listeners.playerJoin;
 
+import java.io.File;
 import java.sql.Connection;
 
 public class TimeOption extends JavaPlugin {
-
-    private static TimeOption plugin;
-    private dbConnect dbManager;
+    public String configPath;
+    private static playerJoin plugin;
+    private dbConnect dbConnect;
 
     @Override
     public void onEnable() {
-        getCommand("changetime").setExecutor(new changetime());
-        Bukkit.getPluginManager().registerEvents(new playerJoin(plugin), this);
+        File config = new File(this.getDataFolder(),"config.yml");
+
+        configPath = config.getPath();
+        if(!(config.exists())){
+            this.getConfig().options().copyDefaults(true);
+            saveConfig();
+        }
+
+        getCommand("nightmodetoggle").setExecutor(new toggleCMD());
+        PluginManager pm= getServer().getPluginManager();
+        pm.registerEvents(new playerJoin(this), this);
+
 
         System.out.println("-----------------------");
         System.out.println("- TimeChanger enabled -");
         System.out.println("-----------------------");
 
-        this.dbManager = new dbConnect("localhost",3306,"7OZu2MyS5y5TTd4r", "mega", "akris_plugintest");
+        this.dbConnect = new dbConnect("localhost",3306,"7OZu2MyS5y5TTd4r", "mega", "akris_plugintest");
     }
 
-    public static TimeOption getPlugin() {
+    public static playerJoin getPlugin() {
+
         return plugin;
     }
 

@@ -4,16 +4,20 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import java.io.Console;
+import org.bukkit.configuration.file.FileConfiguration;
+import xyz.akriscraft.timeoption.TimeOption;
 
 import static java.lang.String.format;
 
-public class changetime implements CommandExecutor {
+public class toggleCMD implements CommandExecutor {
+
+    private TimeOption plugin;
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+        FileConfiguration config = plugin.getConfig();
         if (!(sender instanceof Player)) {
-            System.out.println("Solo los jugadores pueden usar este comando.");
+            String message = "lang.onlyPlayers";
+            sender.sendMessage(config.getString(message));
             return true;
         }
         Player player = (Player) sender;
@@ -32,4 +36,5 @@ public class changetime implements CommandExecutor {
         }
         return true;
     }
+
 }

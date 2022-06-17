@@ -4,5 +4,5 @@ version: 1.0
 author: NotMeg4_
 
 commands:
-  changetime:
-    description: "Cambia tu tiempo (Día, Tarde, Noche)"
+  nightmodetoggle:
+    description: "Toggles your time (Day or Night)"

@@ -1,14 +1,12 @@
 package xyz.akriscraft.timeoption.utils;
 import java.sql.*;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class dbMan {
 
     public static boolean playerExist(Connection connection, String player) {
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM nightMode WHERE (playerName=?)");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM nightMode WHERE playerName=?");
             statement.setString(1, player);
             ResultSet result = statement.executeQuery();
 
@@ -22,7 +20,7 @@ public class dbMan {
     }
     public static void createPlayer(Connection connection, String player){
         try {
-            if(!playerExist(connection,player)) {
+            if(!(playerExist(connection, player))) {
                 PreparedStatement statement = connection.prepareStatement("INSERT INTO nightMode VALUE (?,?)");
                 statement.setString(1, player);
                 statement.setBoolean(2, false);

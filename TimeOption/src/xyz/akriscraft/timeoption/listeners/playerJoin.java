@@ -20,9 +20,8 @@ public class playerJoin implements Listener {
     public void onplayerjoin(PlayerJoinEvent e) {
 
         Player p = e.getPlayer();
-        p.sendMessage("putita");
 
-        if(!dbMan.playerExist(plugin.getMySQL(), p.getName())) {
+        if(!(dbMan.playerExist(plugin.getMySQL(), p.getName()))) {
             dbMan.createPlayer(plugin.getMySQL(), p.getName());
         }
     }
