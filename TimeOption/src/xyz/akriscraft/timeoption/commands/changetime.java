@@ -7,6 +7,8 @@ import org.bukkit.entity.Player;
 
 import java.io.Console;
 
+import static java.lang.String.format;
+
 public class changetime implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
