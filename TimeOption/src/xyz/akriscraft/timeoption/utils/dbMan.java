@@ -1,6 +1,5 @@
 package xyz.akriscraft.timeoption.utils;
 import java.sql.*;
-import org.bukkit.entity.Player;
 
 public class dbMan {
 
@@ -31,10 +30,10 @@ public class dbMan {
         }
     }
 
-    public static boolean getNightMode(Connection connection, Player player) {
+    public static boolean getNightMode(Connection connection, String player) {
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM nightMode WHERE (playerName=?)");
-            statement.setString(1, player.toString());
+            statement.setString(1, player);
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
@@ -46,11 +45,11 @@ public class dbMan {
         }
         return false;
     }
-    public static void setNightMode(Connection connection, Player player, boolean enabled) {
+    public static void setNightMode(Connection connection, String player, boolean enabled) {
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE nightMode SET enabled=? WHERE (playerName=?)");
             statement.setBoolean(1, enabled);
-            statement.setString(2, player.toString());
+            statement.setString(2, player);
             statement.executeUpdate();
 
         }catch (SQLException e) {

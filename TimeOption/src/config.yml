@@ -5,8 +5,9 @@ mysql_db:
   ip: 127.0.0.1
   database: "timeoption_"
 lang:
-  day: "&bDía"
-  night: "&5Noche"
-  change: "&aTiempo cambiado a:"
+  enabled: "&5Activado"
+  disabled: "&cDesactivado"
+  toggled: "&aNight mode:"
   onlyPlayers: "&cokEste comando solo puede ser usado por jugadores"
   configReloaded: "config reloaded"
+  noPermission: "You dont have permission"

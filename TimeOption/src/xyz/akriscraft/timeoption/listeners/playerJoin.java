@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import xyz.akriscraft.timeoption.TimeOption;
 import xyz.akriscraft.timeoption.utils.dbMan;
+import xyz.akriscraft.timeoption.utils.timeUpdate;
 
 
 public class playerJoin implements Listener {
@@ -24,5 +25,6 @@ public class playerJoin implements Listener {
         if(!(dbMan.playerExist(plugin.getMySQL(), p.getName()))) {
             dbMan.createPlayer(plugin.getMySQL(), p.getName());
         }
+        new timeUpdate(e.getPlayer(), plugin);
     }
 }

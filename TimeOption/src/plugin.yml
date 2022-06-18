@@ -4,5 +4,7 @@ version: 1.0
 author: NotMeg4_
 
 commands:
-  nightmodetoggle:
-    description: "Toggles your time (Day or Night)"
+  nightmode:
+    description: "Toggles your time (Day or Night)."
+  nightmodereload:
+    description: "Reloads NightMode config."
