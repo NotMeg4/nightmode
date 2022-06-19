@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="github.azbh111.spigot.1.12.2" level="project" />
     <orderEntry type="library" name="boosted-yaml-1.0" level="project" />
+    <orderEntry type="library" name="placeholderapi-2.11.1-javadoc" level="project" />
   </component>
 </module>
