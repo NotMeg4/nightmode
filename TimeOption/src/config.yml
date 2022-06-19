@@ -1,13 +1,18 @@
 mysql_db:
   user: "root"
+  host: "localhost"
   password: ""
   port: 3306
-  ip: 127.0.0.1
   database: "timeoption_"
+  table: nightMode
+
+#Placeholders: {prefix}, {action}
+
 lang:
-  enabled: "&5Activado"
-  disabled: "&cDesactivado"
-  toggled: "&aNight mode:"
-  onlyPlayers: "&cokEste comando solo puede ser usado por jugadores"
-  configReloaded: "config reloaded"
-  noPermission: "You dont have permission"
+  prefix: "&5NightMode&8> "
+  enabled: "&5enabled"
+  disabled: "&cdisabled"
+  toggle: "{prefix} &aYou {action} &ayour nightmode"
+  onlyPlayers: "{prefix} &cEste comando solo puede ser usado por jugadores"
+  configReloaded: "{prefix} &aConfig reloaded."
+  noPermission: "{prefix} &cYou dont have permission to use this command."

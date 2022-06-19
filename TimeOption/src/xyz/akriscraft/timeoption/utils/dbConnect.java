@@ -3,12 +3,13 @@ package xyz.akriscraft.timeoption.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
+import xyz.akriscraft.timeoption.TimeOption;
 
 import java.sql.*;
 
 public class dbConnect {
     private Connection connection;
-
     private String host;
     private int port;
     private String pass;
@@ -21,18 +22,18 @@ public class dbConnect {
         this.pass = pass;
         this.user = user;
         this.database = database;
-
         try {
             synchronized (this) {
+                Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&5Connecting to the database..."));
                 if(connection != null && !connection.isClosed()){
-                    Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&cNightMode: &6Error al conectar con la base de datos"));
+                    Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&4There was an error connecting to the database"));
                     return;
                 }
                 Class.forName("com.mysql.jdbc.Driver");
                 this.connection = DriverManager.getConnection("jdbc:mysql://"+this.host+":"+this.port+"/"+this.database,this.user,this.pass);
                 PreparedStatement statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS `nightMode` (`playerName` varchar(255), `enabled` boolean)");
                 statement.executeUpdate();
-                Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&cNightMode: &6Conectado a la base de datos"));
+                Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&aConnected to the database"));
             }
 
         }catch (SQLException e) {
