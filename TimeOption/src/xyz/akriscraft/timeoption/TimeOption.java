@@ -43,6 +43,7 @@ public class TimeOption extends JavaPlugin {
         getCommand("nightmodereload").setExecutor(new reloadCMD(this));
         PluginManager pm= getServer().getPluginManager();
         pm.registerEvents(new playerJoin(this), this);
+        pm.registerEvents(new worldChange(this), this);
 
         System.out.println("-----------------------");
         System.out.println("- NightMode (Enabled) -");

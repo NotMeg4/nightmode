@@ -15,14 +15,17 @@ public class worldChange implements Listener {
 
     public worldChange(TimeOption plugin) {
         this.plugin = plugin;
+        config = plugin.getConfig();
     }
+    FileConfiguration config;
 
     @EventHandler
     public void onWorldChange(PlayerChangedWorldEvent e) {
-
+        String worlds = "enabled_Worlds":
+        List<String> enabledWorlds = config.getStringList(worlds)
         Player p = e.getPlayer();
 
-        if(p.getWorld().toString() == "lobby") {
+        if(enabledWorlds.contains(p.getWorld().toString())) {
             new timeUpdate(e.getPlayer(), plugin);
         }
     }

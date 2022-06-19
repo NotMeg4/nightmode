@@ -16,3 +16,6 @@ lang:
   onlyPlayers: "{prefix} &cEste comando solo puede ser usado por jugadores"
   configReloaded: "{prefix} &aConfig reloaded."
   noPermission: "{prefix} &cYou dont have permission to use this command."
+
+worlds:
+- "Lobby"
