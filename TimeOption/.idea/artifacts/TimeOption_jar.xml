@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="TimeOption:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/TimeOption_jar</output-path>
-    <root id="archive" name="TimeOption.jar">
-      <element id="module-output" name="TimeOption" />
-    </root>
-  </artifact>
-</component>
