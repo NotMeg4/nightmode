@@ -1,4 +1,4 @@
-package xyz.akriscraft.timeoption.utils;
+package github.notmeg4.nightmode.utils;
 import java.sql.*;
 
 public class dbMan {

@@ -1,19 +1,19 @@
-package xyz.akriscraft.timeoption.listeners;
+package github.notmeg4.nightmode.listeners;
 
+import github.notmeg4.nightmode.NightMode;
+import github.notmeg4.nightmode.utils.dbMan;
+import github.notmeg4.nightmode.utils.timeUpdate;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import xyz.akriscraft.timeoption.TimeOption;
-import xyz.akriscraft.timeoption.utils.dbMan;
-import xyz.akriscraft.timeoption.utils.timeUpdate;
 
 
 public class playerJoin implements Listener {
 
-    private TimeOption plugin;
+    private NightMode plugin;
 
-    public playerJoin(TimeOption plugin) {
+    public playerJoin(NightMode plugin) {
         this.plugin = plugin;
     }
 

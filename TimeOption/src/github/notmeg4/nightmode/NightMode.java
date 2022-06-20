@@ -1,23 +1,20 @@
-package xyz.akriscraft.timeoption;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+package github.notmeg4.nightmode;
+import github.notmeg4.nightmode.commands.reloadCMD;
+import github.notmeg4.nightmode.commands.toggleCMD;
+import github.notmeg4.nightmode.listeners.worldChange;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
-import xyz.akriscraft.timeoption.commands.reloadCMD;
-import xyz.akriscraft.timeoption.commands.toggleCMD;
-import xyz.akriscraft.timeoption.listeners.placeholderRequest;
-import xyz.akriscraft.timeoption.listeners.worldChange;
-import xyz.akriscraft.timeoption.utils.dbConnect;
-import xyz.akriscraft.timeoption.listeners.playerJoin;
+import github.notmeg4.nightmode.listeners.placeholderRequest;
+import github.notmeg4.nightmode.utils.dbConnect;
+import github.notmeg4.nightmode.listeners.playerJoin;
 
 
 import java.io.File;
 import java.sql.Connection;
-import java.sql.Time;
 
-public class TimeOption extends JavaPlugin {
-    private TimeOption plugin;
+public class NightMode extends JavaPlugin {
+    private NightMode plugin;
     public String configPath;
     private dbConnect dbConnect;
 

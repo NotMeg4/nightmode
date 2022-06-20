@@ -1,4 +1,4 @@
-package xyz.akriscraft.timeoption.commands;
+package github.notmeg4.nightmode.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,13 +7,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.configuration.file.FileConfiguration;
-import xyz.akriscraft.timeoption.TimeOption;
+import github.notmeg4.nightmode.NightMode;
 
 public class reloadCMD implements CommandExecutor {
 
-    private TimeOption plugin;
+    private NightMode plugin;
 
-    public reloadCMD(TimeOption plugin) {
+    public reloadCMD(NightMode plugin) {
         this.plugin = plugin;
     }
     FileConfiguration config;

@@ -1,4 +1,4 @@
-package xyz.akriscraft.timeoption.commands;
+package github.notmeg4.nightmode.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,15 +7,15 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.configuration.file.FileConfiguration;
-import xyz.akriscraft.timeoption.TimeOption;
-import xyz.akriscraft.timeoption.utils.dbMan;
-import xyz.akriscraft.timeoption.utils.timeUpdate;
+import github.notmeg4.nightmode.NightMode;
+import github.notmeg4.nightmode.utils.dbMan;
+import github.notmeg4.nightmode.utils.timeUpdate;
 
 public class toggleCMD implements CommandExecutor {
 
-    private TimeOption plugin;
+    private NightMode plugin;
 
-    public toggleCMD(TimeOption plugin) {
+    public toggleCMD(NightMode plugin) {
         this.plugin = plugin;
         config = plugin.getConfig();
     }

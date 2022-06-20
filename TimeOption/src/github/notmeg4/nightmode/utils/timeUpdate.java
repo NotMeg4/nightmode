@@ -1,14 +1,13 @@
-package xyz.akriscraft.timeoption.utils;
+package github.notmeg4.nightmode.utils;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import xyz.akriscraft.timeoption.TimeOption;
+import github.notmeg4.nightmode.NightMode;
 
 
 public class timeUpdate {
     private Player p;
-    private TimeOption plugin;
-    public timeUpdate(Player p, TimeOption plugin){
+    private NightMode plugin;
+    public timeUpdate(Player p, NightMode plugin){
         this.plugin = plugin;
         if(dbMan.getNightMode(this.plugin.getMySQL(), p.getName())){
             p.setPlayerTime(18000, false);

@@ -1,24 +1,21 @@
-package xyz.akriscraft.timeoption.listeners;
+package github.notmeg4.nightmode.listeners;
 
+import github.notmeg4.nightmode.utils.timeUpdate;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
-import xyz.akriscraft.timeoption.TimeOption;
-import xyz.akriscraft.timeoption.utils.dbMan;
-import xyz.akriscraft.timeoption.utils.timeUpdate;
+import github.notmeg4.nightmode.NightMode;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 
 
 public class worldChange implements Listener {
 
-    private TimeOption plugin;
+    private NightMode plugin;
 
-    public worldChange(TimeOption plugin) {
+    public worldChange(NightMode plugin) {
         this.plugin = plugin;
         config = plugin.getConfig();
     }

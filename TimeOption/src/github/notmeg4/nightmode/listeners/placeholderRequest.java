@@ -1,26 +1,24 @@
-package xyz.akriscraft.timeoption.listeners;
+package github.notmeg4.nightmode.listeners;
+import github.notmeg4.nightmode.NightMode;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.Nullable;
-import xyz.akriscraft.timeoption.TimeOption;
-import org.jetbrains.annotations.NotNull;
-import xyz.akriscraft.timeoption.utils.dbMan;
+import github.notmeg4.nightmode.utils.dbMan;
 
 public class placeholderRequest extends PlaceholderExpansion {
-    private TimeOption plugin;
+    private NightMode plugin;
 
     @Override
-    public @NotNull String getIdentifier() {
+    public String getIdentifier() {
         return "nightmode";
     }
 
     @Override
-    public @NotNull String getAuthor() {
+    public String getAuthor() {
         return "NotMeg4_";
     }
 
     @Override
-    public @NotNull String getVersion() {
+    public String getVersion() {
         return "1.0";
     }
 
@@ -33,12 +31,12 @@ public class placeholderRequest extends PlaceholderExpansion {
     public boolean persist() {
         return true;
     }
-    public placeholderRequest(TimeOption plugin) {
+    public placeholderRequest(NightMode plugin) {
         this.plugin = plugin;
     }
 
     @Override
-    public @Nullable String onPlaceholderRequest(Player p, @NotNull String params) {
+    public String onPlaceholderRequest(Player p, String params) {
         if(p == null) {
             return "nullPlayer";
         }
@@ -49,6 +47,6 @@ public class placeholderRequest extends PlaceholderExpansion {
             }
             return "false";
         }
-        return null;
+        return "null";
     }
 }
