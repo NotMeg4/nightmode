@@ -6,6 +6,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 import xyz.akriscraft.timeoption.commands.reloadCMD;
 import xyz.akriscraft.timeoption.commands.toggleCMD;
+import xyz.akriscraft.timeoption.listeners.placeholderRequest;
+import xyz.akriscraft.timeoption.listeners.worldChange;
 import xyz.akriscraft.timeoption.utils.dbConnect;
 import xyz.akriscraft.timeoption.listeners.playerJoin;
 
@@ -37,13 +39,14 @@ public class TimeOption extends JavaPlugin {
         String dbPort = "mysql_db.port";
         String dbUser = "mysql_db.user";
         String dbName = "mysql_db.database";
-        String dbTable = "mysql_db.table";
 
         getCommand("nightmode").setExecutor(new toggleCMD(this));
         getCommand("nightmodereload").setExecutor(new reloadCMD(this));
         PluginManager pm= getServer().getPluginManager();
         pm.registerEvents(new playerJoin(this), this);
         pm.registerEvents(new worldChange(this), this);
+
+        new placeholderRequest(this).register();
 
         System.out.println("-----------------------");
         System.out.println("- NightMode (Enabled) -");

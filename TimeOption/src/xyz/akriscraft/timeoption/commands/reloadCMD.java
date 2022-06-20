@@ -22,8 +22,9 @@ public class reloadCMD implements CommandExecutor {
         config = plugin.getConfig();
         String prefix = "lang.prefix";
         if (!(sender instanceof Player)) {
-            plugin.reloadConfig();
-            plugin.getConfig();
+            Bukkit.getPluginManager().disablePlugin(plugin);
+            Bukkit.getPluginManager().getPlugin(plugin.getName()).reloadConfig();
+            Bukkit.getPluginManager().enablePlugin(plugin);
             String message = "lang.configReloaded";
             Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString(message).replace("{prefix}", config.getString(prefix))));
             return true;
@@ -33,10 +34,11 @@ public class reloadCMD implements CommandExecutor {
             String noperm = "lang.noPermission";
             player.sendMessage(config.getString(noperm).replace("{prefix}", config.getString(prefix)));
         } else {
-            plugin.getConfig();
-            plugin.reloadConfig();
+            Bukkit.getPluginManager().disablePlugin(plugin);
+            Bukkit.getPluginManager().getPlugin(plugin.getName()).reloadConfig();
+            Bukkit.getPluginManager().enablePlugin(plugin);
             String message = "lang.configReloaded";
-            player.sendMessage(config.getString(message).replace("{prefix}", config.getString(prefix)));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString(message).replace("{prefix}", config.getString(prefix))));
         }
         return true;
     }

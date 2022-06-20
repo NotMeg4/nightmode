@@ -1,5 +1,6 @@
 package xyz.akriscraft.timeoption.utils;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import xyz.akriscraft.timeoption.TimeOption;
 

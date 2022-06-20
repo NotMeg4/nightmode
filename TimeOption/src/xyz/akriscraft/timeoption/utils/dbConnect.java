@@ -3,9 +3,6 @@ package xyz.akriscraft.timeoption.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
-import xyz.akriscraft.timeoption.TimeOption;
-
 import java.sql.*;
 
 public class dbConnect {

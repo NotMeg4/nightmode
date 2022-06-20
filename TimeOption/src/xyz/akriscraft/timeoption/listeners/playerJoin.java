@@ -27,7 +27,4 @@ public class playerJoin implements Listener {
         }
         new timeUpdate(e.getPlayer(), plugin);
     }
-    @EventHandler
-    public void onWorldChange(PlayerT)
-
 }

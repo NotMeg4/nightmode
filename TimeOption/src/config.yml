@@ -3,19 +3,20 @@ mysql_db:
   host: "localhost"
   password: ""
   port: 3306
-  database: "timeoption_"
-  table: nightMode
+  database: "nigthMode"
 
 #Placeholders: {prefix}, {action}
-
 lang:
   prefix: "&5NightMode&8> "
   enabled: "&5enabled"
   disabled: "&cdisabled"
-  toggle: "{prefix} &aYou {action} &ayour nightmode"
-  onlyPlayers: "{prefix} &cEste comando solo puede ser usado por jugadores"
+  toggle: "{prefix} &aYou {action} &ayour nightmode!"
+  onlyPlayers: "{prefix} &cThis command can be used only by players!"
   configReloaded: "{prefix} &aConfig reloaded."
   noPermission: "{prefix} &cYou dont have permission to use this command."
 
+#Enable if nightmode will only work on specific worlds
 worlds:
-- "Lobby"
+  perWorld: false
+  enabledWorlds:
+    - Lobby

@@ -2,6 +2,7 @@ main: xyz.akriscraft.timeoption.TimeOption
 name: TimeOption
 version: 1.0
 author: NotMeg4_
+depend: [PlaceholderAPI]
 
 commands:
   nightmode:
