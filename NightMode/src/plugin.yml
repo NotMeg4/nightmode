@@ -1,0 +1,11 @@
+main: github.notmeg4.nightmode.NightMode
+name: NightMode
+version: 1.0
+author: NotMeg4_
+depend: [PlaceholderAPI]
+
+commands:
+  nightmode:
+    description: "Toggles your time (Day or Night)."
+  nightmodereload:
+    description: "Reloads NightMode config."
